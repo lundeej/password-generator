@@ -12,10 +12,18 @@ function writePassword() {
 
 // Defining generatePassword 
 function generatePassword () {
-  var password = ""; 
+  // prompt for the length of the password 
 
-  password += "A";
-  password += "n";
+  //ask for character types 
+
+  // lowercase 
+
+  // uppercase 
+  
+  // numeric 
+
+  // special charactor 
+
 
   return password;
 }
