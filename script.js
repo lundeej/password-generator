@@ -10,5 +10,17 @@ function writePassword() {
 
 }
 
+// Defining generatePassword 
+function generatePassword () {
+  var password = ""; 
+
+  password += "A";
+  password += "n";
+
+  return password;
+}
+
+console.log (generatePassword ());
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
