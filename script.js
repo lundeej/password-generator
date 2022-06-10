@@ -10,17 +10,6 @@ function writePassword() {
   passwordText.value = password;
   
 }
-// prompt for the length of the password 
-
-//ask for character types 
-
-// lowercase 
-
-// uppercase 
-
-// numeric 
-
-// special charactor 
 
 // function to get lowercase 
 function getRandomLower() {
@@ -34,7 +23,7 @@ function getRandomUpper() {
 
 // function to get number 
 function getRandomNumber() {
- return String.fromCharCode(Math.floor(Math.random() * 10) +48);
+  return String.fromCharCode(Math.floor(Math.random() * 10) +48);
 }
 
 // function to get symbol 
@@ -45,7 +34,18 @@ function getRandomSymbol() {
 
 // Defining generatePassword 
 function generatePassword () {
-
+  // prompt for the length of the password 
+   prompt("What is the desired lenghts of your password? Chose between 8 and 128 characters")
+  //ask for character types 
+  
+  // lowercase 
+  
+  // uppercase 
+  
+  // numeric 
+  
+  // special charactor 
+  
   return password;
 }
 
