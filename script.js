@@ -33,11 +33,18 @@ function generatePassword(){
   // validate the password length, by verify that it is between 8 and 128 
 
   // Prompt user if they want uppercase and store in a variable 
-
+  var uppercase = confirm("Do you want to include Uppercase letters?")
+  
   // Prompt user if they want lowercase and store in a variable 
-
+  var lowercase = confirm("Do you want to include lowercase letters?")
+  
   // Prompt user if they want numbers and store in a variable 
+  var numbers = confirm("Do you want to include numbers?")
 
-  // Prompt user if they want special characters and store in a variable 
+  // Prompt user if they want special characters and store in a variable
+  var specialcharcters = confirm("Do you want to include special characters?")
 
+  for (var i = 0; i < length.length; i++){
+    console.log(); 
+  }
 }
