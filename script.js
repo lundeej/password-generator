@@ -28,31 +28,36 @@ var specialcharcters = ["!", "@", "#", "$", "%", "^", "&", "*,"];
 //generate password
 function generatePassword(){
 
+  var passwordset - [];
+
+  var confirmuppercase;
+  var confirmlowercase;
+  var confirmnumbers;
+  var confirmspecialcharcters;
+
   // Prompt to chose the password length and store in a variable 
-  var length = prompt("Enter the length of the password"); 
+  length = prompt("Enter the length of the password"); 
   // validate the password length, by verify that it is between 8 and 128 
   if (length < 8 || length > 129 ){
     alert("Password length must be between 8 and 128 characters");
     return; 
   } else {
-    console.log(length);
-  } 
+      // Prompt user if they want uppercase and store in a variable 
+      confirmuppercase = confirm("Do you want to include Uppercase letters?")
 
-  // Prompt user if they want uppercase and store in a variable 
-  var uppercase = confirm("Do you want to include Uppercase letters?")
-  console.log(uppercase);
+      // Prompt user if they want lowercase and store in a variable 
+      confirmlowercase = confirm("Do you want to include lowercase letters?")
 
-  // Prompt user if they want lowercase and store in a variable 
-  var lowercase = confirm("Do you want to include lowercase letters?")
-  console.log(lowercase);
+      // Prompt user if they want numbers and store in a variable 
+      confirmnumbers = confirm("Do you want to include numbers?")
 
-  // Prompt user if they want numbers and store in a variable 
-  var numbers = confirm("Do you want to include numbers?")
-  console.log(numbers);
-
-  // Prompt user if they want special characters and store in a variable
-  var specialcharcters = confirm("Do you want to include special characters?")
-  console.log(specialcharcters);
+      // Prompt user if they want special characters and store in a variable
+      confirmspecialcharcters = confirm("Do you want to include special characters?")
+  }  if (confirmuppercase || confirmlowercase || confirmnumbers || confirmspecialcharcters){
+        if (confirmuppercase){
+          passwordset - passwordset.concast(uppercase);
+        }
+      }
 
   for (var i = 0; i < length.length; i++){
    
