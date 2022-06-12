@@ -31,8 +31,10 @@ function generatePassword(){
   // Prompt to chose the password length and store in a variable 
   var length = prompt("Enter the length of the password"); 
   // validate the password length, by verify that it is between 8 and 128 
-  if (length > 8 || length < 129 ){
-    prompt("Password length must be between 8 and 128 characters");
+  if (length < 8 || length > 129 ){
+    alert("Password length must be between 8 and 128 characters");
+  } else {
+    console.log(length);
   }
 
   // Prompt user if they want uppercase and store in a variable 
