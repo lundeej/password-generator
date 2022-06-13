@@ -27,6 +27,7 @@ function generatePassword(){
   //Empty string to store password characters 
   var passwordstring = "";
 
+  // Variables for selected characters to include in the password 
   var confirmuppercase;
   var confirmlowercase;
   var confirmnumbers;
