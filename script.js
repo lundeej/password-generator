@@ -22,15 +22,18 @@ var choices;
 //generate password
 function generatePassword(){
   //Empty array to store the characters the USER wants to use. 
-  var passwordset = [];
+  var choosencharacters = [];
   
+  //Empty string to store password characters 
+  var passwordstring = "";
+
   var confirmuppercase;
   var confirmlowercase;
   var confirmnumbers;
   var confirmspecialcharcters;
   
   // Prompt to chose the password length and store in a variable 
-  passwordlength = prompt("Enter the length of the password"); 
+  var passwordlength = prompt("Enter the length of the password"); 
   
   // if the 'passwordlength" is less than 8 and greater than 128; 
   if (passwordlength < 8 || length > 129 ){
@@ -40,35 +43,38 @@ function generatePassword(){
   
   else {
     // Prompt user if they want uppercase and store in a variable 
-    confirmuppercase = confirm("Click 'OK' if you want to include Uppercase letters?")
+    if(confirmuppercase = confirm("Click 'OK' if you want to include Uppercase letters?")){
+      Array.prototype.push.apply(choosencharacters, uppercase);
+    }
     
     // Prompt user if they want lowercase and store in a variable 
-    confirmlowercase = confirm("Click 'OK' if you want to include lowercase letters?")
+    if(confirmlowercase = confirm("Click 'OK' if you want to include lowercase letters?")){
+      Array.prototype.push.apply(choosencharacters, lowercase);
+    }
     
     // Prompt user if they want numbers and store in a variable 
-    confirmnumbers = confirm("Click 'OK' if you want to include numbers?")
+    if(confirmnumbers = confirm("Click 'OK' if you want to include numbers?")){
+      Array.prototype.push.apply(choosencharacters, numbers);
+    }
     
     // Prompt user if they want special characters and store in a variable
-    confirmspecialcharcters = confirm("Click 'OK' if you want to include special characters?")
-  }  
-  
-  // if all 4 options are negative 
-  if (!confirmuppercase && !confirmlowercase && !confirmnumbers && !confirmspecialcharcters){
-    alert("You must choose at least one: Uppercase, lowercase, Number or Special Characters to be included in the password!");
-    return ""; 
-  }
-  
-  else if (confirmuppercase || confirmlowercase || confirmnumbers || confirmspecialcharcters){
-    passwordset = uppercase.concat(lowercase, numbers, specialcharcters);
-  };
-
-  //Empty string to store password characters 
-  var passwordcharacters = "";
-  
-  for (var i = 0; i < passwordlength.length; i++){
-    var passwordcharacters = passwordset[Math.floor(Math.random() * (i +1))];
-    passwordcharacters += passwordcharacters
-    return passwordcharacters;
+    if(confirmspecialcharcters = confirm("Click 'OK' if you want to include special characters?")){
+      Array.prototype.push.apply(choosencharacters, specialcharcters);
+    }
+    // if all 4 options are negative 
+    if (!confirmuppercase && !confirmlowercase && !confirmnumbers && !confirmspecialcharcters){
+      alert("You must choose at least one: Uppercase, lowercase, Number or Special Characters to be included in the password!");
+      return ""; 
+    }
+    // Run loop to get password generated 
+    else {
+      for (var i = 0; i < passwordlength; i++){
+        var random = Math.floor(Math.random() * choosencharacters.length);
+        passwordstring += choosencharacters[random];
+      }
+      console.log(passwordstring);
+      return (passwordstring);
+    }
   }
 }
 
